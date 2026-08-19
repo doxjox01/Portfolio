@@ -1074,14 +1074,18 @@ body {
    RESPONSIVE
 ═══════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .hero-content { grid-template-columns: 1fr; gap: 60px; }
-  .hero-visual { grid-column: 1; grid-row: 1; }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+  .hero-visual { order: -1; width: 100%; }
   .hero-name { font-size: clamp(2.5rem, 5vw, 4rem); }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  .card-1, .card-2, .card-3 { display: none; }
 }
 
 @media (max-width: 768px) {
@@ -1103,17 +1107,46 @@ body {
   .btn-hire { display: none; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .certs-grid { grid-template-columns: 1fr; }
-  .hero-content { padding-top: 100px; text-align: center; }
-  .hero-summary { margin: 0 auto 36px; }
-  .hero-cta { justify-content: center; }
+  /* Hero mobile: full single-column, centered */
+  .hero-section { padding: 0 20px; overflow-x: hidden; }
+  .hero-content {
+    padding-top: 90px;
+    text-align: center;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-visual {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .hero-roles {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1rem;
+  }
+  .role-typewriter { max-width: 100%; }
+  .hero-badges-row {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-summary { margin: 0 auto; font-size: 0.92rem; }
+  .hero-cta { justify-content: center; flex-wrap: wrap; }
   .hero-stats { justify-content: center; }
-  .avatar-ring-outer { width: 240px; height: 240px; }
+  .avatar-ring-outer { width: 220px; height: 220px; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 500px) {
   .skills-grid { grid-template-columns: 1fr; }
-  .hero-name { font-size: 2.5rem; }
-  .project-card { padding: 28px; }
+  .hero-name { font-size: 2.2rem; }
+  .project-card { padding: 24px; }
   .cert-card { flex-direction: column; gap: 12px; }
+  .hero-badges-row { gap: 6px; }
+  .floating-card { padding: 8px 12px; font-size: 0.76rem; }
+  .hero-stats { gap: 16px; }
+  .stat-num { font-size: 1.5rem; }
 }

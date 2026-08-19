@@ -122,10 +122,10 @@ navLinksEl.querySelectorAll('a').forEach(link => {
 // ─── TYPEWRITER EFFECT ─────────────────────────────────────
 const roles = [
   'things with React & Node',
-  'DSA problems in Java',
-  'projects that actually work',
   'full-stack web apps',
+  'projects that actually work',
   'cool stuff with Python',
+  'AI & ML projects',
 ];
 let roleIndex   = 0;
 let charIndex   = 0;
